@@ -44,3 +44,11 @@ def drawNumpad():
                  (i * cell_num) + (cell_num / 2) + 280)
             numpadNum += 1
     text("<", 940 + cell_num + cell_num, cell_num * 3)
+
+def startingNumber():
+    for row in range(9):
+        for col in range(9):
+            if random(1) < 0.5:
+                grid[row][col] = int(random(1, 10))
+            else:
+                grid[row][col] = 0
