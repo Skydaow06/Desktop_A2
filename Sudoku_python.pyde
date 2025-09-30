@@ -11,7 +11,8 @@ def draw():
     drawGrid()
     gridNumpad()
     drawNumpad()
-    
+    drawNumber()
+
 def drawGrid():
     i = 0
     while i <= 9:
@@ -52,3 +53,14 @@ def startingNumber():
                 grid[row][col] = int(random(1, 10))
             else:
                 grid[row][col] = 0
+
+def drawNumber():
+    textAlign(CENTER, CENTER)
+    textSize(28)
+    fill(0)
+    for r in range(9):
+        for c in range(9):
+            if grid[r][c] != 0:
+                text(str(grid[r][c]),
+                     c * cell_size + cell_size / 2,
+                     r * cell_size + cell_size / 2)
